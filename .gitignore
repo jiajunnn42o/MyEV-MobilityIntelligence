@@ -62,3 +62,7 @@ preview/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Old installation scripts
+INSTALL_CHARGING_v22.cjs
+APPLY_*.cjs
