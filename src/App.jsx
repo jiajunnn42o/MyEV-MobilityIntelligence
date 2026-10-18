@@ -1,6 +1,7 @@
 import { MarketSeasonalitySection, ForecastResearchSection } from './components/ResearchIntelligence.jsx';
 import PolicyIntelligence from './components/PolicyIntelligence.jsx';
 import ForecastIntelligence from './components/ForecastIntelligence.jsx';
+import MalaysiaChargingStations from './components/MalaysiaChargingStations.jsx';
 import VolterraIcon from './components/VolterraIcon.jsx';
 // MyEV-OVERVIEW-GEO-CLARITY-V7
 import OverviewGeoSnapshot from './components/OverviewGeoSnapshot.jsx';
@@ -40,7 +41,7 @@ function Icon({ name, size = 18, className = '', ...props }) {
 }
 
 function Brand({go}) {return <button className="brand" onClick={()=>go('overview')} aria-label="MyEV home"><span className="brand-mark"><span className="brand-mark-inner"/></span><span className="brand-type">MyEV<span className="brand-dot">.</span></span></button>}
-const NAV=[{title:'Overview',to:'overview'}, {title:'Markets',to:'market'}, {title:'Geospatial',items:[['Geographic explorer','geographic'],['Charging network','charging']]}, {title:'Intelligence',items:[['Forecasting lab','forecasting'],['Policy explorer','policy'],['Scenario studio','scenarios']]}, {title:'Sustainability',to:'sustainability'}, {title:'Reports',to:'reports'}];
+const NAV=[{title:'Overview',to:'overview'}, {title:'Markets',to:'market'}, {title:'Geospatial',items:[['Geographic explorer','geographic'],['EV charging stations','charging']]}, {title:'Intelligence',items:[['Forecasting lab','forecasting'],['Policy explorer','policy'],['Scenario studio','scenarios']]}, {title:'Sustainability',to:'sustainability'}, {title:'Reports',to:'reports'}];
 function App(){
  const [page,setPage]=useState((location.hash.replace('#/','')||'overview').split('?')[0]);
  const [theme,setTheme]=useState('light');
@@ -71,7 +72,7 @@ function App(){
  const go=p=>{if(location.hash===`#/${p}`){setPage(p);window.scrollTo({top:0,behavior:'smooth'})}else location.hash=`/${p}`;setDrop(null);setMobile(false);setShowSearch(false)};
  const notify=msg=>{setNotice(msg);setTimeout(()=>setNotice(''),4200)};
  const download=()=>{const cols=['date','total','ev','hybrid','petrol','evShare','hybridShare','electrifiedShare','evOfElectrified'];const csv=[cols.join(','),...M.map(r=>cols.map(c=>r[c]).join(','))].join('\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='myev_jpj_car_market_2022_2026.csv';a.click();URL.revokeObjectURL(a.href);};
- const pages={overview:'Overview',market:'Market intelligence',geographic:'Geographic explorer',charging:'Charging infrastructure',forecasting:'Forecasting lab',policy:'Policy intelligence',scenarios:'Scenario simulator',sustainability:'Sustainability intelligence',reports:'Reports & insights'};
+ const pages={overview:'Overview',market:'Market intelligence',geographic:'Geographic explorer',charging:'EV charging stations',forecasting:'Forecasting lab',policy:'Policy intelligence',scenarios:'Scenario simulator',sustainability:'Sustainability intelligence',reports:'Reports & insights'};
  return <div className={`app theme-${theme}`}>
   <header className="site-header">
    <div className="header-inner">
@@ -85,7 +86,7 @@ function App(){
   {page==='overview'&&<Overview go={go} download={download}/>}
   {page==='market'&&<><MarketPage go={go}/><><MarketBrandInsights/><MarketSeasonalitySection/></></>}
   {page==='geographic'&&<GeographicIntelligencePage/>}
-  {page==='charging'&&<ChargingPage go={go}/>}
+  {page==='charging'&&<MalaysiaChargingStations/>}
   {page==='forecasting'&&<><ForecastIntelligence/><ForecastResearchSection/></>}
   {page==='policy'&&<PolicyIntelligence go={go}/>}
   {page==='scenarios'&&<ScenarioPage go={go}/>}

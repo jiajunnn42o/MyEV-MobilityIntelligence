@@ -1,0 +1,401 @@
+/* ================================================================
+   MyEV — Malaysia EV Charging Stations v23
+   Scoped styles, Inter 500/600, white/grey + lime #A9FF19.
+   No global navbar, App.jsx, icon or dropdown overrides.
+   ================================================================ */
+.myev-charge-page {
+  --myev-charge-lime: #a9ff19;
+  --myev-charge-text: #171918;
+  --myev-charge-muted: #858b87;
+  --myev-charge-border: #e3e6e1;
+  --myev-charge-surface: #ffffff;
+  --myev-charge-soft: #f0f1ee;
+  color: var(--myev-charge-text);
+  width: min(100%, 1520px);
+  margin: 0 auto;
+  padding: 38px clamp(15px, 3vw, 50px) 48px;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  font-weight: 500;
+}
+.myev-charge-page *,
+.myev-charge-page *::before,
+.myev-charge-page *::after { box-sizing: border-box; }
+.myev-charge-page button,
+.myev-charge-page input,
+.myev-charge-page select { font: inherit; }
+.myev-charge-page button { cursor: pointer; }
+.myev-charge-page h1,
+.myev-charge-page h2,
+.myev-charge-page h3,
+.myev-charge-page p { margin: 0; }
+.myev-charge-eyebrow { color: var(--myev-charge-muted); font-size: 10px; letter-spacing: .12em; font-weight: 600; line-height: 1.5; }
+.myev-charge-accent { color: var(--myev-charge-lime); }
+.myev-charge-hero { display: flex; align-items: end; justify-content: space-between; gap: 22px; margin: 0 0 27px; }
+.myev-charge-hero h1 { font-size: clamp(29px, 4.1vw, 54px); font-weight: 600; letter-spacing: -.065em; line-height: 1.11; margin: 11px 0 10px; }
+.myev-charge-hero p { font-size: 13px; line-height: 1.7; color: var(--myev-charge-muted); max-width: 690px; }
+.myev-charge-source-pill { font-size: 10px; font-weight: 600; letter-spacing: .07em; white-space: nowrap; color: var(--myev-charge-muted); border: 1px solid var(--myev-charge-border); border-radius: 9px; padding: 12px 14px; background: var(--myev-charge-surface); }
+.myev-charge-guide { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 0; margin-bottom: 18px; border: 1px solid var(--myev-charge-border); border-radius: 13px; overflow: hidden; background: var(--myev-charge-surface); }
+.myev-charge-guide > div { display: flex; align-items: center; gap: 12px; padding: 16px 17px; font-size: 11px; color: var(--myev-charge-muted); border-right: 1px solid var(--myev-charge-border); }
+.myev-charge-guide > div:last-child { border: 0; }
+.myev-charge-guide b { color: var(--myev-charge-text); background: var(--myev-charge-soft); border-radius: 50%; font-size: 10px; width: 26px; height: 26px; display: grid; place-items: center; flex: 0 0 auto; }
+.myev-charge-filters { display: grid; grid-template-columns: minmax(170px,1.6fr) repeat(4,minmax(115px,1fr)) auto; align-items: end; gap: 10px; padding: 16px; background: var(--myev-charge-surface); border: 1px solid var(--myev-charge-border); border-radius: 15px; margin-bottom: 16px; }
+.myev-charge-field { display: grid; gap: 7px; min-width: 0; }
+.myev-charge-field > span { font-size: 9px; color: var(--myev-charge-muted); font-weight: 600; letter-spacing: .1em; }
+.myev-charge-field input,
+.myev-charge-field select { width: 100%; height: 43px; min-width: 0; padding: 0 12px; font-size: 12px; font-weight: 500; color: var(--myev-charge-text); background-color: #fafbf9; border: 1px solid var(--myev-charge-border); border-radius: 9px; outline: 0; transition: border-color .16s ease, background .16s ease; }
+.myev-charge-field select { appearance: none; -webkit-appearance: none; padding-right: 34px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='none' stroke='%232b302d' stroke-width='2.3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m4 7 5 5 5-5'/%3E%3C/svg%3E"); background-position: right 10px center; background-repeat: no-repeat; background-size: 18px 18px; }
+.myev-charge-field input:focus,
+.myev-charge-field select:focus { background-color: white; border-color: #9ba29a; box-shadow: 0 0 0 2px rgb(169 255 25 / 12%); }
+.myev-charge-clear { height: 43px; border: 1px solid var(--myev-charge-border); background: var(--myev-charge-soft); color: var(--myev-charge-text); font-weight: 600 !important; font-size: 11px !important; border-radius: 9px; padding: 0 15px; white-space: nowrap; }
+.myev-charge-clear:hover { background: #e7e9e5; }
+.myev-charge-kpis { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 0; background: var(--myev-charge-surface); border: 1px solid var(--myev-charge-border); border-radius: 15px; margin-bottom: 18px; overflow: hidden; }
+.myev-charge-kpis > div { padding: 19px 22px; display: grid; gap: 7px; border-right: 1px solid var(--myev-charge-border); }
+.myev-charge-kpis > div:last-child { border: 0; }
+.myev-charge-kpis span { font-size: 9px; font-weight: 600; letter-spacing: .10em; color: var(--myev-charge-muted); }
+.myev-charge-kpis strong { font-size: clamp(25px, 3vw, 38px); font-weight: 600; letter-spacing: -.055em; line-height: 1; }
+.myev-charge-kpis small { font-size: 10px; line-height: 1.45; color: var(--myev-charge-muted); }
+.myev-charge-main { display: grid; grid-template-columns: minmax(0,1.65fr) minmax(320px,.85fr); gap: 18px; align-items: stretch; }
+.myev-charge-map-card,
+.myev-charge-detail-card,
+.myev-charge-lower-card { background: var(--myev-charge-surface); border: 1px solid var(--myev-charge-border); border-radius: 17px; overflow: hidden; min-width: 0; }
+.myev-charge-map-card { display: flex; flex-direction: column; }
+.myev-charge-card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 22px 24px 19px; }
+.myev-charge-card-head h2,
+.myev-charge-lower-card h2 { font-size: clamp(21px,2.2vw,28px); font-weight: 600; letter-spacing: -.05em; line-height: 1.2; margin-top: 8px; }
+.myev-charge-head-note { font-size: 10px; color: var(--myev-charge-muted); text-align: right; }
+.myev-charge-map-wrap { position: relative; flex: 1; min-height: 540px; overflow: hidden; background: #edf0ec; }
+.myev-charge-map { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
+.myev-charge-map .leaflet-tile-pane { filter: grayscale(1) brightness(1.04) contrast(.83); }
+.myev-charge-map .leaflet-control-attribution { background: rgb(255 255 255 / 88%); font-family: Inter, sans-serif; font-size: 9px; }
+.myev-charge-map-top { position: absolute; z-index: 500; top: 17px; left: 17px; padding: 11px 13px; font-size: 10px; letter-spacing: .08em; background: rgb(255 255 255 / 94%); border: 1px solid var(--myev-charge-border); border-radius: 9px; color: #59605c; font-weight: 600; pointer-events: none; }
+.myev-charge-map-top::before { content: ''; display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; background: var(--myev-charge-lime); }
+.myev-charge-map-actions { z-index: 550; position: absolute; right: 17px; top: 17px; display: grid; gap: 7px; }
+.myev-charge-map-actions button { width: 39px; height: 39px; display: grid; place-items: center; border-radius: 11px; color: var(--myev-charge-text); background: rgb(255 255 255 / 96%); border: 1px solid var(--myev-charge-border); line-height: 1; font-size: 23px; font-weight: 600; padding: 0; transition: background .15s ease, transform .15s ease; }
+.myev-charge-map-actions button:hover { background: #f5f8f2; transform: translateY(-1px); }
+.myev-charge-map-actions .myev-charge-map-fit { font-size: 24px; margin-top: 3px; }
+.myev-charge-leaflet-pin { background: none !important; border: 0 !important; }
+.myev-charge-pin { display: grid; place-items: center; width: 30px; height: 30px; background: #fff; color: var(--myev-charge-text); border: 2px solid #5b635c; border-radius: 50%; font-family: Inter, sans-serif; font-size: 13px; font-weight: 600; box-shadow: 0 1px 4px rgb(0 0 0 / 15%); }
+.myev-charge-pin.is-dc { border-color: #1c211e; background: #282c29; color: #fff; }
+.myev-charge-pin.is-ac { border-color: #929c94; }
+.myev-charge-pin.is-selected { width: 34px; height: 34px; background: var(--myev-charge-lime); color: #111; border-color: #171918; }
+.myev-charge-pin.is-cluster { width: 42px; height: 42px; background: #252925; color: #fff; border-color: #f7f8f6; font-size: 12px; }
+.myev-charge-bolt { font-size: 13px; }
+.myev-charge-overlay { position: absolute; z-index: 650; inset: 0; display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 9px; padding: 28px; text-align: center; background: rgb(248 249 246 / 88%); color: var(--myev-charge-muted); font-size: 13px; line-height: 1.6; }
+.myev-charge-overlay strong { color: var(--myev-charge-text); font-size: 18px; }
+.myev-charge-overlay p { max-width: 430px; }
+.myev-charge-overlay code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; background: #e5e8e3; padding: 2px 5px; border-radius: 4px; }
+.myev-charge-overlay small { font-size: 11px; }
+.myev-charge-map-key { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 20px; padding: 15px 20px; font-size: 10px; color: var(--myev-charge-muted); border-top: 1px solid var(--myev-charge-border); }
+.myev-charge-map-key > span { display: inline-flex; align-items: center; gap: 8px; }
+.myev-charge-key-dot { width: 10px; height: 10px; border: 1.5px solid #888f88; background: #e5e8e4; border-radius: 50%; }
+.myev-charge-key-dot.is-dc { background: #2c302c; border-color: #2c302c; }
+.myev-charge-key-dot.is-selected { background: var(--myev-charge-lime); border-color: #282c29; }
+.myev-charge-detail-card { display: flex; flex-direction: column; min-height: 640px; }
+.myev-charge-station-detail { margin: 0 20px 20px; padding: 19px; border: 1px solid var(--myev-charge-border); border-radius: 12px; }
+.myev-charge-selected-name { display: flex; align-items: flex-start; gap: 12px; }
+.myev-charge-mini-icon { flex: 0 0 auto; width: 38px; height: 38px; display: grid; place-items: center; border-radius: 10px; background: var(--myev-charge-lime); font-size: 19px; }
+.myev-charge-selected-name h3 { font-size: 16px; line-height: 1.35; font-weight: 600; margin: 0 0 7px; }
+.myev-charge-selected-name p { font-size: 11px; color: var(--myev-charge-muted); line-height: 1.55; }
+.myev-charge-detail-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0; }
+.myev-charge-detail-tags span { color: #444a45; background: var(--myev-charge-soft); padding: 7px 9px; border-radius: 6px; font-size: 10px; font-weight: 600; }
+.myev-charge-info-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); border-top: 1px solid var(--myev-charge-border); }
+.myev-charge-info-item { display: grid; gap: 6px; padding: 14px 8px 14px 0; border-bottom: 1px solid var(--myev-charge-border); min-width: 0; }
+.myev-charge-info-item:nth-child(even) { padding-left: 10px; }
+.myev-charge-info-item > span { color: var(--myev-charge-muted); font-size: 9px; font-weight: 600; letter-spacing: .07em; }
+.myev-charge-info-item strong { color: var(--myev-charge-text); font-size: 11px; line-height: 1.6; overflow-wrap: anywhere; font-weight: 600; }
+.myev-charge-station-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.myev-charge-station-links a { padding: 10px 11px; border: 1px solid var(--myev-charge-border); border-radius: 7px; background: #f5f6f3; font-size: 11px; color: var(--myev-charge-text); text-decoration: none; font-weight: 600; }
+.myev-charge-station-links a:hover { background: #e9ece6; }
+.myev-charge-unselect { border: 0; background: transparent; font-size: 10px !important; color: var(--myev-charge-muted); padding: 12px 0 0; }
+.myev-charge-detail-placeholder { padding: 22px 24px 28px; color: var(--myev-charge-muted); }
+.myev-charge-placeholder-glyph { font-size: 24px; width: 53px; height: 53px; display: grid; place-items: center; background: var(--myev-charge-soft); border-radius: 12px; margin-bottom: 18px; }
+.myev-charge-detail-placeholder h3 { color: var(--myev-charge-text); font-size: 17px; font-weight: 600; margin-bottom: 10px; }
+.myev-charge-detail-placeholder p { font-size: 12px; line-height: 1.7; }
+.myev-charge-lower { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px; align-items: stretch; }
+.myev-charge-lower-card { padding: 25px 28px 29px; }
+.myev-charge-lower-card > p { color: var(--myev-charge-muted); font-size: 12px; line-height: 1.6; margin-top: 9px; }
+.myev-charge-ranking { margin-top: 23px; }
+.myev-charge-ranking-row { display: grid; align-items: center; grid-template-columns: 26px minmax(0,1.1fr) minmax(90px,2fr) 35px; gap: 9px; padding: 11px 2px; width: 100%; text-align: left; background: transparent; border: 0; border-bottom: 1px solid var(--myev-charge-border); }
+.myev-charge-ranking-row:hover { background: #f6f6f3; }
+.myev-charge-ranking-row > span { font-size: 10px; color: var(--myev-charge-muted); }
+.myev-charge-ranking-row strong { font-size: 11px; font-weight: 600; }
+.myev-charge-ranking-row i { width: 100%; height: 6px; background: #e5e8e3; border-radius: 12px; overflow: hidden; }
+.myev-charge-ranking-row em { display: block; height: 100%; background: var(--myev-charge-lime); border-radius: 12px; }
+.myev-charge-ranking-row b { font-size: 11px; text-align: right; }
+.myev-charge-info-section { padding: 18px 0; border-bottom: 1px solid var(--myev-charge-border); }
+.myev-charge-info-section:first-of-type { margin-top: 18px; }
+.myev-charge-info-section h3 { font-size: 13px; font-weight: 600; margin-bottom: 7px; }
+.myev-charge-info-section p { font-size: 12px; color: var(--myev-charge-muted); line-height: 1.7; }
+.myev-charge-info-section code { background: var(--myev-charge-soft); border-radius: 3px; padding: 2px 4px; font-size: 11px; }
+.myev-charge-credit { color: var(--myev-charge-muted); font-size: 10px; line-height: 1.8; margin-top: 17px; }
+@media(max-width: 1180px) {
+  .myev-charge-filters { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .myev-charge-main { grid-template-columns: minmax(0,1.2fr) minmax(310px,1fr); }
+}
+@media(max-width: 850px) {
+  .myev-charge-hero { align-items: start; flex-direction: column; }
+  .myev-charge-guide { grid-template-columns: 1fr; }
+  .myev-charge-guide > div { border-right: 0; border-bottom: 1px solid var(--myev-charge-border); }
+  .myev-charge-guide > div:last-child { border-bottom: 0; }
+  .myev-charge-main,.myev-charge-lower { grid-template-columns: minmax(0,1fr); }
+  .myev-charge-map-wrap { min-height: 420px; flex: none; height: 430px; }
+  .myev-charge-detail-card { min-height: 0; }
+}
+@media(max-width: 600px) {
+  .myev-charge-page { padding: 21px 12px 35px; }
+  .myev-charge-filters { grid-template-columns: 1fr 1fr; padding: 12px; }
+  .myev-charge-search { grid-column: span 2; }
+  .myev-charge-clear { grid-column: span 2; }
+  .myev-charge-kpis { grid-template-columns: 1fr 1fr; }
+  .myev-charge-kpis > div:nth-child(2) { border-right: 0; }
+  .myev-charge-kpis > div:nth-child(-n+2) { border-bottom: 1px solid var(--myev-charge-border); }
+  .myev-charge-kpis > div { padding: 17px; }
+  .myev-charge-map-wrap { height: 365px; min-height: 365px; }
+  .myev-charge-card-head { padding: 20px 17px 15px; }
+  .myev-charge-head-note { display: none; }
+  .myev-charge-map-actions { right: 10px; top: 10px; }
+  .myev-charge-map-top { left: 10px; top: 10px; font-size: 8px; padding: 10px; }
+  .myev-charge-map-key { padding: 14px; }
+  .myev-charge-lower-card { padding: 20px; }
+  .myev-charge-ranking-row { grid-template-columns: 23px minmax(0,1fr) minmax(65px,1.2fr) 35px; }
+}
+@media(prefers-reduced-motion: reduce) {
+  .myev-charge-page * { transition-duration: 0s !important; }
+}
+
+
+/* ================================================================
+   v27 / Station detail uses the entire fixed-height right-hand card.
+   Only detail content scrolls if unusually long; map height is unchanged.
+   ================================================================ */
+@media (min-width: 851px) {
+  .myev-charge-page {
+    --myev-charge-panel-height: clamp(600px, 68vh, 690px);
+  }
+  .myev-charge-main {
+    align-items: stretch;
+    min-height: 0;
+  }
+  .myev-charge-map-card,
+  .myev-charge-detail-card {
+    height: var(--myev-charge-panel-height);
+    min-height: 0;
+    max-height: var(--myev-charge-panel-height);
+    overflow: hidden;
+  }
+  .myev-charge-map-wrap {
+    min-height: 0;
+    flex: 1 1 auto;
+  }
+  .myev-charge-detail-card {
+    display: flex;
+    flex-direction: column;
+  }
+  .myev-charge-detail-card > .myev-charge-card-head {
+    flex-shrink: 0;
+  }
+  .myev-charge-station-detail {
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: none;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    overscroll-behavior: contain;
+  }
+  .myev-charge-station-links {
+    margin-top: auto;
+    padding-top: 22px;
+  }
+  .myev-charge-detail-placeholder {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+/* ================================================================
+   v24 / Charging map controls — light Iconsax Linear strokes
+   Three separate, consistent buttons. Fit view shows ALL Malaysia.
+   No global icon or Leaflet control overrides.
+   ================================================================ */
+.myev-charge-map-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.myev-charge-map-actions button,
+.myev-charge-map-actions .myev-charge-map-fit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #dfe3df;
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.96);
+  color: #303633;
+  box-shadow: none;
+  transform: none;
+  cursor: pointer;
+  transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+.myev-charge-map-actions button:hover {
+  background: #f3f5f1;
+  border-color: #cdd3cb;
+  transform: none;
+}
+
+.myev-charge-map-actions button:active {
+  background: #e8ebe6;
+}
+
+.myev-charge-map-actions button:focus-visible {
+  outline: 2px solid #858e85;
+  outline-offset: 2px;
+}
+
+.myev-charge-map-actions button svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.myev-charge-map-actions .myev-charge-map-fit svg {
+  width: 19px;
+  height: 19px;
+}
+
+.myev-charge-bolt {
+  display: grid;
+  place-items: center;
+}
+.myev-charge-bolt svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+.myev-charge-mini-icon {
+  font-size: inherit;
+}
+.myev-charge-mini-icon svg,
+.myev-charge-placeholder-glyph svg {
+  display: block;
+}
+.myev-charge-geo-source {
+  display: block;
+  margin-top: 5px;
+  color: var(--myev-charge-muted);
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+@media (max-width: 850px) {
+  .myev-charge-map-actions { top: 10px; right: 10px; }
+  .myev-charge-detail-card { height: auto; max-height: none; min-height: 0; }
+}
+
+
+/* ================================================================
+   v25 / Malaysia focus mask
+   Real DOSM land polygons remain clear; surrounding countries and sea
+   are softly desaturated by the vector layer. Nothing blocks panning,
+   wheel zoom, markers, map controls, or station click interactions.
+   ================================================================ */
+.myev-charge-map .leaflet-pane.leaflet-myev-country-focus-mask-pane,
+.myev-charge-map .myev-charge-country-focus {
+  pointer-events: none !important;
+}
+
+/* v27 / Cleaner Selected station layout after removing Matching locations. */
+.myev-charge-detail-card .myev-charge-station-detail {
+  margin: 0 20px 20px;
+  padding: 23px 22px;
+}
+.myev-charge-detail-card .myev-charge-info-item {
+  padding-top: 19px;
+  padding-bottom: 19px;
+}
+.myev-charge-detail-card .myev-charge-unselect {
+  align-self: flex-start;
+}
+@media (max-width: 850px) {
+  .myev-charge-detail-card .myev-charge-station-detail {
+    max-height: none;
+    overflow: visible;
+  }
+}
+@media (max-width: 600px) {
+  .myev-charge-detail-card .myev-charge-station-detail {
+    margin: 0 14px 16px;
+    padding: 18px 16px;
+  }
+}
+
+
+/* ================================================================
+   v28 / Keep the unselected state at the top of the details card.
+   Height remains controlled by the existing v27 layout rules.
+   ================================================================ */
+.myev-charge-detail-card > .myev-charge-detail-placeholder {
+  padding: 25px 30px 28px;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.myev-charge-detail-placeholder .myev-charge-placeholder-glyph {
+  margin-bottom: 17px;
+}
+
+.myev-charge-detail-placeholder p {
+  max-width: 380px;
+}
+
+@media (min-width: 851px) {
+  .myev-charge-detail-card > .myev-charge-detail-placeholder {
+    justify-content: flex-start;
+  }
+}
+
+/* Consistent link text + Iconsax Linear icons, no text-glyph arrows. */
+.myev-charge-station-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 42px;
+  padding: 10px 13px;
+  border-radius: 9px;
+  line-height: 1.25;
+  transition: border-color .18s ease, background-color .18s ease;
+}
+
+.myev-charge-station-links a svg {
+  display: block;
+  width: 17px;
+  height: 17px;
+  flex: 0 0 17px;
+  stroke-width: 1.8;
+}
+
+.myev-charge-station-links a:focus-visible {
+  outline: 2px solid var(--myev-charge-text);
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .myev-charge-detail-card > .myev-charge-detail-placeholder {
+    padding: 22px 18px 28px;
+  }
+}
