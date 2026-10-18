@@ -1,0 +1,353 @@
+/* ============================================================
+   MyEV v7 — Overview geographic context
+   Local to Overview only; does not override general map pages.
+   Inter 500 / 600 · monochrome + #A9FF19
+   ============================================================ */
+
+.page-overview .map-panel .panel-heading {
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  padding-bottom: 18px;
+}
+
+.page-overview .map-panel .panel-heading > div {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.page-overview .map-panel .panel-heading p {
+  font-size: 12px;
+  line-height: 1.6;
+  max-width: 490px;
+}
+
+.vg7-overview-preview {
+  min-width: 0;
+}
+
+.vg7-map-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 15px;
+  align-items: center;
+  padding: 15px 23px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--raised);
+}
+
+.vg7-small-label {
+  display: block;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.095em;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.vg7-map-explanation p {
+  margin: 5px 0 0;
+  font-size: 11px;
+  line-height: 1.58;
+  color: var(--maintext);
+}
+
+.vg7-quick-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  min-width: 0;
+}
+
+.vg7-quick-stat {
+  min-width: 0;
+  padding-left: 13px;
+  border-left: 1px solid var(--line);
+}
+
+.vg7-quick-stat strong,
+.vg7-selected-value strong {
+  display: block;
+  font-size: clamp(15px, 1.3vw, 20px);
+  font-weight: 600;
+  line-height: 1.25;
+  font-variant-numeric: tabular-nums;
+  color: var(--maintext);
+}
+
+.vg7-quick-stat > span,
+.vg7-selected-value > span {
+  display: block;
+  margin-top: 4px;
+  font-size: 9px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.vg7-map-window {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.page-overview .vg7-map-window .vm-geospatial-map.is-compact {
+  width: 100%;
+  height: 280px;
+  min-height: 280px;
+}
+
+.vg7-map-window .vm-map-heading,
+.vg7-map-window .vm-map-footer,
+.vg7-map-window .vm-map-reset,
+.vg7-map-window .vm-marker-shell {
+  display: none !important;
+}
+
+.vg7-map-layer-badge {
+  position: absolute;
+  top: 15px;
+  left: 17px;
+  z-index: 510;
+  padding: 7px 10px;
+  border-radius: 7px;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--card) 94%, transparent);
+  color: var(--maintext);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  pointer-events: none;
+}
+
+.vg7-map-context {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr) minmax(0, 1fr);
+  gap: 13px;
+  align-items: center;
+  padding: 13px 23px;
+  border-top: 1px solid var(--line);
+}
+
+.vg7-selected-state {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+}
+
+.vg7-selected-mark {
+  flex: 0 0 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #A9FF19;
+  border: 1px solid #171918;
+}
+
+.vg7-selected-state > div {
+  min-width: 0;
+}
+
+.vg7-selected-state strong {
+  display: block;
+  margin-top: 3px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.vg7-caveat {
+  margin: 0;
+  padding: 0 23px 13px;
+  font-size: 9px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* Footer keeps one clearly named action; no duplicated arrow button. */
+.page-overview .map-panel .map-bottom {
+  min-height: 62px;
+  flex-wrap: wrap;
+  padding: 12px 23px;
+  row-gap: 10px;
+}
+
+.page-overview .map-panel .map-bottom > div {
+  min-width: 0;
+}
+
+.page-overview .map-panel .map-footer-link {
+  font-size: 12px;
+  letter-spacing: 0;
+}
+
+@media (max-width: 1390px) {
+  .vg7-map-intro {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .vg7-quick-stats {
+    max-width: 330px;
+  }
+}
+
+@media (max-width: 740px) {
+  .vg7-map-intro {
+    padding: 14px 17px;
+  }
+
+  .vg7-map-explanation p {
+    font-size: 11px;
+  }
+
+  .page-overview .vg7-map-window .vm-geospatial-map.is-compact {
+    height: 300px;
+    min-height: 300px;
+  }
+
+  .vg7-map-context {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+    padding: 13px 17px;
+  }
+
+  .vg7-selected-state {
+    grid-column: 1 / -1;
+  }
+
+  .vg7-caveat {
+    padding: 0 17px 13px;
+  }
+
+  .page-overview .map-panel .map-bottom {
+    padding: 13px 17px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vg7-overview-preview *,
+  .vg7-overview-preview *::before,
+  .vg7-overview-preview *::after {
+    transition: none !important;
+  }
+}
+
+/* ============================================================
+   MyEV v8 — Tall, non-distorted overview chart
+   SVG viewBox is measured by ResizeObserver in MarketChart.
+   ============================================================ */
+
+.page-overview .chart-panel {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.page-overview .chart-panel .viz-wrap {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-overview .chart-panel .linechart-container {
+  flex: 1 1 auto;
+  width: 100%;
+  height: auto;
+  min-height: 325px;
+  aspect-ratio: auto;
+  margin-top: 8px;
+  position: relative;
+}
+
+.page-overview .chart-panel .linechart-container svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.page-overview .chart-panel .axis-label {
+  font-family: Inter, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+/* ============================================================
+   MyEV v8 — Overview Leaflet zoom controls (+ / −)
+   Works only in the compact Overview preview.
+   ============================================================ */
+
+.vg7-map-window .vm-overview-zoom-controls {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 650;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: var(--card);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+}
+
+.vg7-map-window .vm-overview-zoom-controls button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: var(--card);
+  color: var(--maintext);
+  font-family: Inter, Arial, sans-serif;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 180ms ease;
+}
+
+.vg7-map-window .vm-overview-zoom-controls button + button {
+  border-top: 1px solid var(--line);
+}
+
+.vg7-map-window .vm-overview-zoom-controls button:hover {
+  background: var(--soft);
+}
+
+.vg7-map-window .vm-overview-zoom-controls button:focus-visible {
+  outline: 2px solid #A9FF19;
+  outline-offset: -3px;
+}
+
+@media (max-width: 740px) {
+  .page-overview .chart-panel .linechart-container {
+    height: 270px;
+    min-height: 270px;
+    flex: 0 0 270px;
+  }
+
+  .vg7-map-window .vm-overview-zoom-controls {
+    top: 12px;
+    right: 12px;
+  }
+
+  .vg7-map-window .vm-overview-zoom-controls button {
+    width: 34px;
+    height: 34px;
+    font-size: 21px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vg7-map-window .vm-overview-zoom-controls button {
+    transition: none;
+  }
+}

@@ -1,0 +1,261 @@
+/* =============================================================
+   MyEV · Geographic Explorer · Data Coverage & Interpretation
+   Scope: one right-hand panel only. No global or App.jsx rules.
+   ============================================================= */
+
+.myev-coverage {
+  --myev-coverage-text: var(--vm5-ink, #171918);
+  --myev-coverage-muted: var(--vm5-muted, #858985);
+  --myev-coverage-border: var(--vm5-border, #e3e5e0);
+  --myev-coverage-lime: #a9ff19;
+
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 27px 29px 24px;
+  color: var(--myev-coverage-text);
+  background: var(--vm5-card, #ffffff);
+  box-shadow: none;
+}
+
+.myev-coverage *,
+.myev-coverage *::before,
+.myev-coverage *::after {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+/* 01 · Title */
+.myev-coverage-head h2 {
+  margin: 17px 0 10px;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  font-size: clamp(24px, 2.05vw, 34px);
+  line-height: 1.2;
+  letter-spacing: -0.055em;
+  overflow-wrap: break-word;
+}
+
+.myev-coverage-punct {
+  color: var(--myev-coverage-lime);
+}
+
+.myev-coverage-head p {
+  max-width: 530px;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.75;
+  color: var(--myev-coverage-muted);
+}
+
+.myev-coverage-period {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--myev-coverage-muted);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+/* 02 · Actual coverage for selected period */
+.myev-coverage-data {
+  padding: 24px 0 22px;
+  margin-top: 20px;
+  border-top: 1px solid var(--myev-coverage-border);
+  border-bottom: 1px solid var(--myev-coverage-border);
+}
+
+.myev-coverage-value-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  margin-bottom: 18px;
+}
+
+.myev-coverage-value {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.myev-coverage-value--right {
+  text-align: right;
+  align-items: flex-end;
+}
+
+.myev-coverage-value > span,
+.myev-coverage-source > span {
+  color: var(--myev-coverage-muted);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+}
+
+.myev-coverage-value strong {
+  color: var(--myev-coverage-text);
+  font-family: Inter, sans-serif;
+  font-size: clamp(26px, 2.4vw, 37px);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.05em;
+  font-variant-numeric: tabular-nums;
+}
+
+.myev-coverage-value--right strong {
+  color: var(--myev-coverage-muted);
+}
+
+.myev-coverage-value small,
+.myev-coverage-source small {
+  color: var(--myev-coverage-muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.myev-coverage-track {
+  width: 100%;
+  height: 12px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: #a3a8a3;
+}
+
+.myev-coverage-track-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--myev-coverage-lime);
+  transition: width 350ms ease;
+}
+
+.myev-coverage-legend {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-top: 13px;
+  color: var(--myev-coverage-muted);
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.myev-coverage-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.myev-coverage-dot {
+  flex: 0 0 9px;
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+}
+
+.myev-coverage-dot--known {
+  background: var(--myev-coverage-lime);
+  border: 1px solid #7db500;
+}
+
+.myev-coverage-dot--unknown {
+  background: #a3a8a3;
+}
+
+.myev-coverage-explanation {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--myev-coverage-muted);
+  font-size: 10px;
+  line-height: 1.6;
+  cursor: help;
+}
+
+.myev-coverage-explanation:focus-visible {
+  outline: 2px solid var(--myev-coverage-text);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* 03 · Reading guide */
+.myev-coverage-interpretation {
+  padding-top: 21px;
+}
+
+.myev-coverage-interpretation h3 {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.myev-coverage-guidance {
+  display: grid;
+  gap: 17px;
+}
+
+.myev-coverage-guidance > div {
+  display: grid;
+  grid-template-columns: 27px minmax(0, 1fr);
+  gap: 9px;
+  align-items: flex-start;
+}
+
+.myev-coverage-guidance-number {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--myev-coverage-muted);
+  padding-top: 2px;
+}
+
+.myev-coverage-guidance strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.myev-coverage-guidance p {
+  margin: 0;
+  color: var(--myev-coverage-muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* 04 · Source note; sits at bottom when neighboring panel is taller */
+.myev-coverage-source {
+  display: grid;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.myev-coverage-source strong {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* 05 · Mobile layout; allow growth rather than clipping */
+@media (max-width: 740px) {
+  .myev-coverage {
+    padding: 23px 22px;
+    height: auto;
+    min-height: 0;
+  }
+
+  .myev-coverage-data {
+    margin-top: 14px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .myev-coverage-source {
+    margin-top: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .myev-coverage-track-fill {
+    transition: none;
+  }
+}

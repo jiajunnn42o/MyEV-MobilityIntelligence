@@ -1,0 +1,64 @@
+
+# ==================================================
+# MyEV — Git Ignore
+# ==================================================
+
+# Node.js / Vite
+node_modules/
+dist/
+build/
+.vite/
+.cache/
+coverage/
+
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Original Large Datasets
+data/raw/
+data_sources/
+
+# Previous Patches
+patch-assets/
+APPLY_*.cjs
+APPLY*.cjs
+RENAME_TO_MyEV.cjs
+
+# Previous Backups
+backup_*/
+backups_*/
+*-backups/
+*-backups/*
+rename-backups/
+patch-backups/
+*.bak
+*.backup
+
+# Old Standalone Preview
+preview/
+
+# Temporary Files
+*.zip
+*.tmp
+*.log
+
+# Editor
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
